@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": { "es6": true, "browser": true },
+  "rules": {
+    "react/prop-types": "off",
+    "react/self-closing-comp": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  }
+}
