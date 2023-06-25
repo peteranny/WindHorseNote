@@ -1,0 +1,15 @@
+.bellCount {
+  display: inline-flex;
+  align-items: center;
+  border: 3px solid goldenrod;
+  margin: 10px;
+  padding: 3px 0.5em;
+  background-color: white;
+  box-sizing: border-box;
+
+  img {
+    height: 1.5em;
+    margin-right: 0.5em;
+    vertical-align: center;
+  }
+}

@@ -3,6 +3,7 @@ import cn from "classnames";
 import Lawn from "./Lawn";
 import Protagonist from "./Protagonist";
 import Slot from "./Slot";
+import BellCount from "./BellCount";
 import BackpackButton from "./CornerButton/BackpackButton";
 import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
 import styles from "./styles.css";
@@ -20,6 +21,8 @@ const LawnScreen = () => {
         <BackpackButton />
         <EncyclopediaButton />
       </div>
+
+      <BellCount className={cn(styles.option, styles.upperLeft)} />
     </Lawn>
   );
 };

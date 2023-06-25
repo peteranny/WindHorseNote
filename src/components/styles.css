@@ -41,6 +41,11 @@ body {
   .option {
     position: absolute;
 
+    &.upperLeft {
+      top: 0;
+      left: 0;
+    }
+
     &.upperRight {
       top: 0;
       right: 0;
