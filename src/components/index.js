@@ -4,6 +4,7 @@ import Lawn from "./Lawn";
 import Protagonist from "./Protagonist";
 import Slot from "./Slot";
 import BackpackButton from "./CornerButton/BackpackButton";
+import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
 import styles from "./styles.css";
 
 const LawnScreen = () => {
@@ -15,7 +16,10 @@ const LawnScreen = () => {
       <Slot className={cn(styles.slot, styles.lowerLeft)} at="lowerLeft" />
       <Slot className={cn(styles.slot, styles.lowerRight)} at="lowerRight" />
 
-      <BackpackButton className={cn(styles.option, styles.upperRight)} />
+      <div className={cn(styles.option, styles.upperRight)}>
+        <BackpackButton />
+        <EncyclopediaButton />
+      </div>
     </Lawn>
   );
 };
