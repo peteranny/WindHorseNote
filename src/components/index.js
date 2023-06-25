@@ -1,3 +1,9 @@
-const Home = () => null;
+import React from "react";
+import Lawn from "./Lawn";
+import styles from "./styles.css";
 
-export default Home;
+const LawnScreen = () => {
+  return <Lawn className={styles.container} />;
+};
+
+export default LawnScreen;
