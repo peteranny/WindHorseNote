@@ -35,4 +35,15 @@ body {
       z-index: 2;
     }
   }
+
+  position: relative;
+
+  .option {
+    position: absolute;
+
+    &.upperRight {
+      top: 0;
+      right: 0;
+    }
+  }
 }
