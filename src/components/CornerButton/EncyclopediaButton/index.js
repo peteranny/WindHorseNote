@@ -4,7 +4,7 @@ import encyclopedia from "./encyclopedia.png";
 
 const EncyclopediaButton = ({ ...props }) => {
   return (
-    <CornerButton {...props}>
+    <CornerButton path="/encyclopedia" {...props}>
       <img src={encyclopedia} />
     </CornerButton>
   );

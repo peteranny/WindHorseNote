@@ -4,6 +4,7 @@ import Lawn from "./Lawn";
 import Protagonist from "./Protagonist";
 import Slot from "./Slot";
 import BackpackModal from "./Modal/BackpackModal";
+import EncyclopediaModal from "./Modal/EncyclopediaModal";
 import BellCount from "./BellCount";
 import BackpackButton from "./CornerButton/BackpackButton";
 import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
@@ -19,6 +20,7 @@ const LawnScreen = () => {
       <Slot className={cn(styles.slot, styles.lowerRight)} at="lowerRight" />
 
       <BackpackModal />
+      <EncyclopediaModal />
 
       <div className={cn(styles.option, styles.upperRight)}>
         <BackpackButton />
