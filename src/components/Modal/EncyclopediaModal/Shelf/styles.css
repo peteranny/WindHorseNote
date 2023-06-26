@@ -1,0 +1,11 @@
+.store {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+
+  & > button + button {
+    margin-top: 1em;
+  }
+}

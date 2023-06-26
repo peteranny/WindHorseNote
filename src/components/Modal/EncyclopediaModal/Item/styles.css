@@ -1,0 +1,11 @@
+.item {
+  width: 150px;
+  background-color: white;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+  }
+}
