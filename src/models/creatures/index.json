@@ -1,5 +1,23 @@
 [
   {
+    "identifier": "2023-05-horse",
+    "name": "金牛座小馬",
+    "description": "看到小馬牛時，對小馬牛的角感到？？，結果隔天起床就變成金牛座小馬了。",
+    "descriptionImage": "./2023-05.jpeg",
+    "icon": "./2023-05-horse.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5]
+  },
+  {
+    "identifier": "2023-05-wind",
+    "name": "金牛座小風",
+    "description": "看到小馬牛時，對小馬牛的角感到？？，結果隔天起床就變成金牛座小風了。",
+    "descriptionImage": "./2023-05.jpeg",
+    "icon": "./2023-05-wind.png",
+    "family": "wind",
+    "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5]
+  },
+  {
     "identifier": "2023-06-horse",
     "name": "雙子座小馬",
     "description": "會以為自己是小風，和雙子座小風出生看到對方都會問號問號。",
