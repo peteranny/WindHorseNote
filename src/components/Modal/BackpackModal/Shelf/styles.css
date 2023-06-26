@@ -1,0 +1,6 @@
+.store {
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
