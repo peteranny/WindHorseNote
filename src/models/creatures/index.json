@@ -1,5 +1,23 @@
 [
   {
+    "identifier": "2023-04-horse",
+    "name": "牡羊座小馬",
+    "description": "小風很調皮把山羊角放在小馬頭上，就不小心變成牡羊座小馬了。",
+    "descriptionImage": "./2023-04.jpeg",
+    "icon": "./2023-04-horse.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5]
+  },
+  {
+    "identifier": "2023-04-wind",
+    "name": "牡羊座小風",
+    "description": "小馬很調皮把山羊角放在小風頭上，就不小心變成牡羊座小風了。",
+    "descriptionImage": "./2023-04.jpeg",
+    "icon": "./2023-04-wind.png",
+    "family": "wind",
+    "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5]
+  },
+  {
     "identifier": "2023-05-horse",
     "name": "金牛座小馬",
     "description": "看到小馬牛時，對小馬牛的角感到？？，結果隔天起床就變成金牛座小馬了。",
