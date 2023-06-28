@@ -8,4 +8,11 @@
   & > img {
     width: 100%;
   }
+
+  &::before {
+    content: attr(data-name);
+    font-size: 12pt;
+    display: block;
+    padding-top: 0.5em;
+  }
 }

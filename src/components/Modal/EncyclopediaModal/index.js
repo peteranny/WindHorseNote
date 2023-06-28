@@ -7,8 +7,8 @@ import creatures from "../../../models/creatures";
 const Content = () => {
   return (
     <Shelf>
-      {creatures.map(({ identifier, icon }) => (
-        <Item key={identifier} icon={icon} />
+      {creatures.map(({ identifier, name, icon }) => (
+        <Item key={identifier} name={name} icon={icon} />
       ))}
     </Shelf>
   );
