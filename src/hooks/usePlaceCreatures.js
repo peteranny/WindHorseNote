@@ -10,6 +10,12 @@ const propCreatureIdentifier = pipe(
   prop("creatureIdentifier"),
   defaultTo(null)
 );
+const propNextUpdate = pipe(prop("nextUpdate"), defaultTo(null));
+
+const nextUpdateReached = (slot) => {
+  const nextUpdate = propNextUpdate(slot);
+  return nextUpdate && Date.now() >= nextUpdate;
+};
 
 const findNextCreature = () => {
   return creatures[0] || null;
@@ -23,13 +29,19 @@ const createSlotCreatures = (slots) => {
   for (const at of positions) {
     const slot = slots[at] || {};
 
+    if (nextUpdateReached(slot) === false) {
+      // Skip if not yet allowed to update
+      continue;
+    }
+
     if (propItemIdentifier(slot) === null) {
       // Skip if no item
       continue;
     }
 
     if (propCreatureIdentifier(slot) !== null) {
-      // Skip if there is a creature
+      // Remove the placed creature
+      slotCreatures[at] = null;
       continue;
     }
 

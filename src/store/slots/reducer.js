@@ -1,4 +1,13 @@
+import {
+  updateIntervalAfterAddition,
+  updateIntervalAfterRemoval,
+} from "../../models/constants";
 import { PLACE_CREATURES, PLACE_ITEM } from "./actions";
+
+const nextUpdateAfterRemoval = () =>
+  Date.now() + updateIntervalAfterRemoval + Math.floor(Math.random() * 1000);
+const nextUpdateAfterAddition = () =>
+  Date.now() + updateIntervalAfterAddition + Math.floor(Math.random() * 1000);
 
 const slot = (state = {}, action) => {
   switch (action.type) {
@@ -7,14 +16,22 @@ const slot = (state = {}, action) => {
         ...state,
         itemIdentifier: action.identifier,
         creatureIdentifier: null,
+        nextUpdate: nextUpdateAfterRemoval(),
       };
     case PLACE_CREATURES: {
       const at = action.at;
       const creatureIdentifier = action[at];
+      if (typeof creatureIdentifier === "undefined") {
+        // No need to update
+        return state;
+      }
 
       return {
         ...state,
         creatureIdentifier,
+        nextUpdate: creatureIdentifier
+          ? nextUpdateAfterAddition() // If the creature added
+          : nextUpdateAfterRemoval(), // If the creature removed
       };
     }
     default:
