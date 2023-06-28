@@ -11,6 +11,10 @@ const Modal = ({ className, path, children }) => {
     push("..");
   }, [push]);
 
+  const preventPropagation = useCallback((e) => {
+    e.stopPropagation();
+  }, []);
+
   const { pathname } = useLocation();
   const hackRef = useSafariHeightHack([pathname === path]);
 
@@ -18,8 +22,8 @@ const Modal = ({ className, path, children }) => {
     <Route path={path}>
       <div className={styles.overlay} onClick={close}>
         <div className={styles.container}>
-          <div className={cn(styles.modal, className)}>
-            <div ref={hackRef} className={styles.content}>
+          <div className={styles.modal} onClick={preventPropagation}>
+            <div ref={hackRef} className={cn(styles.content, className)}>
               {children}
             </div>
             <button className={styles.closeButton} onClick={close} />
