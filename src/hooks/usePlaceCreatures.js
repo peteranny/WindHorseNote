@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { prop, pipe, defaultTo, isEmpty, not } from "ramda";
+import { prop, pipe, defaultTo, isEmpty, not, toPairs } from "ramda";
 import creatures from "../models/creatures";
 import { slots as slotsSelector } from "../store/slots/selectors";
 import { placeCreatures } from "../store/slots/actions";
+import { unreadBells } from "../store/notifications/actions";
 
 const propItemIdentifier = pipe(prop("itemIdentifier"), defaultTo(null));
 const propCreatureIdentifier = pipe(
@@ -55,7 +56,25 @@ const createSlotCreatures = (slots) => {
   return slotCreatures;
 };
 
+const findRemovedSlots = (slots, slotCreatures) => {
+  const pairs = toPairs(slotCreatures);
+  const removedPairs = pairs.filter(
+    ([, creatureIdentifier]) => creatureIdentifier === null
+  );
+  const removedSlots = removedPairs.map(([at]) => {
+    return { ...slots[at], at };
+  });
+  return removedSlots;
+};
+
 const isNotEmpty = pipe(isEmpty, not);
+
+const generateRandomRewards = (ref) => {
+  const x = Math.random();
+  const y = Math.pow(x - 1, 2); // Random at a ease-in curve
+  const base = ref === 0 ? 3 : Math.log10(ref) * 10;
+  return Math.ceil(y * base);
+};
 
 const usePlaceCreatures = () => {
   // Copy the slots
@@ -69,6 +88,21 @@ const usePlaceCreatures = () => {
 
     if (isNotEmpty(slotCreatures)) {
       dispatch(placeCreatures(slotCreatures));
+    }
+
+    // Post unread bells from removed creatures
+    const removedSlots = findRemovedSlots(slots, slotCreatures);
+    for (const { creatureIdentifier, itemIdentifier } of removedSlots) {
+      const bells = items.find(
+        ({ identifier }) => identifier === itemIdentifier
+      ).bells;
+      dispatch(
+        unreadBells({
+          creatureIdentifier,
+          itemIdentifier,
+          bells: generateRandomRewards(bells),
+        })
+      );
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 };
