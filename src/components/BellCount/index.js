@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import cn from "classnames";
 import styles from "./styles.css";
 import bell from "./bell.png";
+import { bellCount } from "../../store/bellCount/selectors";
 import usePush from "../../hooks/usePush";
 import { hasUnreadBells } from "../../store/notifications/selectors";
 
 const BellCount = ({ className, ...props }) => {
+  const bells = useSelector(bellCount);
   const unread = useSelector(hasUnreadBells);
   const push = usePush();
   const onClick = useCallback(() => {
@@ -18,7 +20,8 @@ const BellCount = ({ className, ...props }) => {
       onClick={onClick}
       {...props}
     >
-      <img src={bell} />0
+      <img src={bell} />
+      {bells}
     </button>
   );
 };

@@ -1,4 +1,4 @@
-import { UNREAD_BELLS } from "./actions";
+import { READ_BELLS, UNREAD_BELLS } from "./actions";
 
 const randomIdentifier = () => Math.floor(Math.random() * 100000000);
 
@@ -17,6 +17,15 @@ const notifications = (state = {}, action) => {
             bells,
           },
         ],
+      };
+    }
+    case READ_BELLS: {
+      const unreadBells = state.unreadBells.filter(
+        ({ identifier }) => identifier !== action.identifier
+      );
+      return {
+        ...state,
+        unreadBells,
       };
     }
     default:
