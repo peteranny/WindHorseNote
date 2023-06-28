@@ -1,6 +1,7 @@
 [
   {
     "identifier": "cake",
-    "icon": "./cake.png"
+    "icon": "./cake.png",
+    "type": "side"
   }
 ]

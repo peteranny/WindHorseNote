@@ -1,5 +1,15 @@
 .slot {
   width: 100px;
   height: 100px;
-  background-color: yellow;
+  filter: drop-shadow(0 10px 2px rgba(0, 0, 0, 0.3));
+
+  .item {
+    position: absolute;
+    width: 100%;
+
+    &.side {
+      z-index: 1;
+      top: 40px; /* Below the creature */
+    }
+  }
 }
