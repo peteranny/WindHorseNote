@@ -1,9 +1,11 @@
 import React, { useCallback } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import styles from "./styles.css";
 import usePush from "../../../../hooks/usePush";
 import { itemIdentifierAt } from "../../../../store/slots/selectors";
+import { placeItem } from "../../../../store/slots/actions";
+import items from "../../../../models/items";
 
 const useAt = (identifier) => {
   const upperLeft = useSelector(itemIdentifierAt("upperLeft"));
@@ -26,12 +28,18 @@ const useAt = (identifier) => {
 };
 
 const Item = ({ identifier, icon }) => {
+  const dispatch = useDispatch();
   const push = usePush();
   const at = useAt(identifier);
+  const item = items.find((item) => item.identifier === identifier);
   const placed = !!at;
   const onClick = useCallback(() => {
-    push(identifier);
-  }, [identifier, push]);
+    if (at && confirm(`你要收回${item.name}嗎？`)) {
+      dispatch(placeItem({ identifier: null, at }));
+    } else {
+      push(identifier);
+    }
+  }, [identifier, push, at, item.name, dispatch]);
 
   return (
     <button

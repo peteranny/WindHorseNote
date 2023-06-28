@@ -1,11 +1,12 @@
 import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import cn from "classnames";
 import Modal from "..";
 import styles from "./styles.css";
 import { placeItem } from "../../../store/slots/actions";
 import usePush from "../../../hooks/usePush";
+import { atForItem } from "../../../store/slots/selectors";
 
 const ItemSlotSelection = () => {
   const { identifier } = useParams();
@@ -18,6 +19,10 @@ const ItemSlotSelection = () => {
     },
     [dispatch, identifier, push]
   );
+
+  const placed = !!useSelector(atForItem(identifier));
+  if (placed) return null;
+
   return (
     <table>
       <tbody>
