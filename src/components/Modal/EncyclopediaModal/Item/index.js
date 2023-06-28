@@ -11,6 +11,7 @@ const Item = ({ identifier, name, icon }) => {
       className={styles.item}
       data-name={name}
       data-seen-count={seenCount}
+      disabled={seenCount === 0}
     >
       <img src={icon} />
     </button>

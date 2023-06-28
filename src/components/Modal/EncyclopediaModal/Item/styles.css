@@ -22,4 +22,18 @@
     display: block;
     padding: 0.5em 0;
   }
+
+  &:disabled {
+    & > img {
+      filter: brightness(0);
+    }
+
+    &::before {
+      content: '???';
+    }
+
+    &::after {
+      display: none;
+    }
+  }
 }
