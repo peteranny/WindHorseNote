@@ -36,6 +36,7 @@
   .content {
     overflow-y: scroll;
     max-height: calc(100vh - 100px);
+    max-height: calc(var(--vh) * 100 - 100px); /* Safari hack to support vw / vh */
   }
 
   /* Place the close button */
