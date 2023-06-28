@@ -9,5 +9,30 @@ body {
 
   .protagonist {
     position: absolute;
+    z-index: 1;
+  }
+
+  .slot {
+    position: absolute;
+
+    &.upperLeft {
+      transform: translate(-120px, -100px);
+      z-index: 0;
+    }
+
+    &.upperRight {
+      transform: translate(120px, -100px);
+      z-index: 0;
+    }
+
+    &.lowerLeft {
+      transform: translate(-120px, 100px);
+      z-index: 2;
+    }
+
+    &.lowerRight {
+      transform: translate(120px, 100px);
+      z-index: 2;
+    }
   }
 }
