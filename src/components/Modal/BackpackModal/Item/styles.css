@@ -1,5 +1,6 @@
 .item {
   background-color: white;
+  transition: 0.3s background-color;
   border: 3px solid black;
   border-radius: 20px;
   margin: 20px;
@@ -8,16 +9,46 @@
   img {
     width: 100px;
     display: block;
+    transition: 0.3s filter;
   }
 
   &::before {
     content: attr(data-name);
     font-size: 12pt;
-    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border: 3px solid transparent;
+    min-height: 1.5em;
+  }
+
+  &:not(.bought) {
+    &::before {
+      width: auto;
+      content: attr(data-bells);
+      background-color: white;
+      background-image: url(../../../BellCount/bell.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding: 0 0.5em 0 2em;
+      border-color: goldenrod;
+      border-radius: 1em;
+      color: black;
+    }
   }
 
   &.placed {
     background-color: lightgray;
     border-color: lightgray;
+  }
+
+  &:disabled {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: transparent;
+
+    img {
+      filter: brightness(0);
+    }
   }
 }

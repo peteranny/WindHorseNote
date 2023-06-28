@@ -5,6 +5,7 @@ import styles from "./styles.css";
 import usePush from "../../../../hooks/usePush";
 import { itemIdentifierAt } from "../../../../store/slots/selectors";
 import { placeItem } from "../../../../store/slots/actions";
+import { boughtItem } from "../../../../store/backpack/selectors";
 import items from "../../../../models/items";
 
 const useAt = (identifier) => {
@@ -33,6 +34,7 @@ const Item = ({ identifier, icon }) => {
   const at = useAt(identifier);
   const placed = !!at;
   const item = items.find((item) => item.identifier === identifier);
+  const bought = useSelector(boughtItem(identifier));
   const onClick = useCallback(() => {
     if (at && confirm(`你要收回${item.name}嗎？`)) {
       dispatch(placeItem({ identifier: null, at }));
@@ -43,9 +45,14 @@ const Item = ({ identifier, icon }) => {
 
   return (
     <button
-      className={cn(styles.item, { [styles.placed]: placed })}
+      className={cn(styles.item, {
+        [styles.placed]: placed,
+        [styles.bought]: bought,
+      })}
+      disabled={!bought}
       onClick={onClick}
       data-name={item.name}
+      data-bells={item.bells}
     >
       <img src={icon} />
     </button>
