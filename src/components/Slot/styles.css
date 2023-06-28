@@ -12,4 +12,9 @@
       top: 40px; /* Below the creature */
     }
   }
+
+  .creature {
+    width: 100%;
+    z-index: 0;
+  }
 }
