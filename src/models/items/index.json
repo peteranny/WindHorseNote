@@ -1,6 +1,7 @@
 [
   {
     "identifier": "cake",
+    "name": "37歲生日蛋糕",
     "icon": "./cake.png",
     "type": "side"
   }

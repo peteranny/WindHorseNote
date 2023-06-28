@@ -45,6 +45,7 @@ const Item = ({ identifier, icon }) => {
     <button
       className={cn(styles.item, { [styles.placed]: placed })}
       onClick={onClick}
+      data-name={item.name}
     >
       <img src={icon} />
     </button>

@@ -7,7 +7,13 @@
 
   img {
     width: 100px;
-    vertical-align: middle;
+    display: block;
+  }
+
+  &::before {
+    content: attr(data-name);
+    font-size: 12pt;
+    max-width: 100%;
   }
 
   &.placed {
