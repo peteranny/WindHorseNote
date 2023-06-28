@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { take } from "ramda";
 import Modal from "..";
 import Shelf from "./Shelf";
 import Item from "./Item";
@@ -9,6 +10,7 @@ import {
   unreadBells as unreadBellsSelector,
 } from "../../../store/notifications/selectors";
 import usePush from "../../../hooks/usePush";
+import styles from "./styles.css";
 
 const Content = () => {
   const { path } = useRouteMatch();
@@ -24,9 +26,17 @@ const Content = () => {
     }
   }, [open, unread, push]);
 
+  const initialCount = 10;
+  const [count, setCount] = useState(initialCount);
+  const onMore = useCallback(() => setCount(count + 10), [count]);
+
+  useEffect(() => {
+    if (open) setCount(initialCount);
+  }, [open]);
+
   return (
     <Shelf>
-      {unreadBells.map(
+      {take(count, unreadBells).map(
         ({ identifier, creatureIdentifier, itemIdentifier, bells }, index) => (
           <Item
             key={index}
@@ -36,6 +46,11 @@ const Content = () => {
             bells={bells}
           />
         )
+      )}
+      {unreadBells.length > count && (
+        <button className={styles.more} onClick={onMore}>
+          ...
+        </button>
       )}
     </Shelf>
   );
