@@ -1,5 +1,23 @@
 [
   {
+    "identifier": "2023-01-horse",
+    "name": "龍龍小馬",
+    "description": "因為就要過小風小馬年了，小馬在小風小馬紅包裡，不知道臉上為什麼會黏著圓圓鬍子，然後就不知不覺變成龍龍小馬，叫聲變成啊龍龍龍。",
+    "descriptionImage": "./2023-01.jpeg",
+    "icon": "./2023-01-horse.png",
+    "family": "horse",
+    "featureVector": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 0, 0, 0.5]
+  },
+  {
+    "identifier": "2023-01-wind",
+    "name": "龍龍小風",
+    "description": "因為就要過小風小馬年了，小風在小風小馬紅包裡，不知道臉上為什麼會黏著圓圓鬍子，然後就不知不覺變成龍龍小風，叫聲變成嗯龍。",
+    "descriptionImage": "./2023-01.jpeg",
+    "icon": "./2023-01-wind.png",
+    "family": "wind",
+    "featureVector": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 0, 0.5]
+  },
+  {
     "identifier": "2023-04-horse",
     "name": "牡羊座小馬",
     "description": "小風很調皮把山羊角放在小馬頭上，就不小心變成牡羊座小馬了。",
