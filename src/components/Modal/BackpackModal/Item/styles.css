@@ -9,4 +9,9 @@
     width: 100px;
     vertical-align: middle;
   }
+
+  &.placed {
+    background-color: lightgray;
+    border-color: lightgray;
+  }
 }
