@@ -2,6 +2,8 @@
   {
     "identifier": "2023-06-horse",
     "name": "雙子座小馬",
+    "description": "會以為自己是小風，和雙子座小風出生看到對方都會問號問號。",
+    "descriptionImage": "./2023-06.jpeg",
     "icon": "./2023-06-horse.png",
     "family": "horse",
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 5]
@@ -9,6 +11,8 @@
   {
     "identifier": "2023-06-wind",
     "name": "雙子座小風",
+    "description": "會以為自己是小馬，和雙子座小馬出生看到對方都會問號問號。",
+    "descriptionImage": "./2023-06.jpeg",
     "icon": "./2023-06-wind.png",
     "family": "wind",
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 5]

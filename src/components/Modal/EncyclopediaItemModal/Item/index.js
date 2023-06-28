@@ -9,6 +9,7 @@ const Item = ({ identifier: creatureIdentifier }) => {
     creatures.find(({ identifier }) => identifier === creatureIdentifier);
 
   const seenCount = useSelector(seenCountOf(identifier));
+  const [year, month] = identifier.match(/\d+/g) || [];
 
   return (
     <div className={styles.container}>
@@ -19,7 +20,14 @@ const Item = ({ identifier: creatureIdentifier }) => {
           data-name={name}
           data-seen-count={seenCount}
         >
-          <div>{description}</div>
+          <div>
+            {year && month && (
+              <span>
+                {year}年{month}月誕生。
+              </span>
+            )}
+            {description}
+          </div>
         </div>
       </div>
       {descriptionImage && (
