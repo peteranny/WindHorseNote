@@ -15,4 +15,11 @@
     display: block;
     padding-top: 0.5em;
   }
+
+  &::after {
+    content: "Visit: " attr(data-seen-count);
+    font-size: 10pt;
+    display: block;
+    padding: 0.5em 0;
+  }
 }

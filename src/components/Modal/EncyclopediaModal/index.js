@@ -8,7 +8,12 @@ const Content = () => {
   return (
     <Shelf>
       {creatures.map(({ identifier, name, icon }) => (
-        <Item key={identifier} name={name} icon={icon} />
+        <Item
+          key={identifier}
+          identifier={identifier}
+          name={name}
+          icon={icon}
+        />
       ))}
     </Shelf>
   );
