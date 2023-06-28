@@ -7,6 +7,8 @@ import { itemIdentifierAt } from "../../../../store/slots/selectors";
 import { placeItem } from "../../../../store/slots/actions";
 import { boughtItem } from "../../../../store/backpack/selectors";
 import items from "../../../../models/items";
+import { buyItem } from "../../../../store/backpack/actions";
+import { bellCount } from "../../../../store/bellCount/selectors";
 
 const useAt = (identifier) => {
   const upperLeft = useSelector(itemIdentifierAt("upperLeft"));
@@ -36,12 +38,17 @@ const Item = ({ identifier, icon }) => {
   const item = items.find((item) => item.identifier === identifier);
   const bought = useSelector(boughtItem(identifier));
   const onClick = useCallback(() => {
-    if (at && confirm(`你要收回${item.name}嗎？`)) {
+    if (bought === false) {
+      alert("購買成功");
+      dispatch(buyItem({ identifier }));
+    } else if (at && confirm(`你要收回${item.name}嗎？`)) {
       dispatch(placeItem({ identifier: null, at }));
     } else {
       push(identifier);
     }
-  }, [identifier, push, at, item.name, dispatch]);
+  }, [identifier, push, at, item.name, dispatch, bought]);
+  const bells = useSelector(bellCount);
+  const buyable = bells >= item.bells;
 
   return (
     <button
@@ -49,12 +56,20 @@ const Item = ({ identifier, icon }) => {
         [styles.placed]: placed,
         [styles.bought]: bought,
       })}
-      disabled={!bought}
+      disabled={!bought && !buyable}
       onClick={onClick}
       data-name={item.name}
       data-bells={item.bells}
     >
-      <img src={icon} />
+      <div className={styles.icon}>
+        {item.overlayWind && (
+          <img className={styles.overlayWind} src={item.overlayWind} />
+        )}
+        {item.overlayHorse && (
+          <img className={styles.overlayHorse} src={item.overlayHorse} />
+        )}
+        <img src={icon} />
+      </div>
     </button>
   );
 };
