@@ -1,11 +1,22 @@
-import React from "react";
-import { useParams } from "react-router";
+import React, { useEffect } from "react";
+import { useParams, useRouteMatch } from "react-router";
+import { useDispatch } from "react-redux";
 import Modal from "..";
 import Item from "./Item";
 import Shelf from "../EncyclopediaModal/Shelf";
+import { readCreature } from "../../../store/creatures/actions";
 
-const Content = () => {
+const Content = ({ path }) => {
   const { identifier } = useParams();
+  const { path: current } = useRouteMatch();
+  const open = current === path;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (open) {
+      dispatch(readCreature(identifier));
+    }
+  }, [open, identifier, dispatch]);
+
   return (
     <Shelf>
       <Item identifier={identifier} />
@@ -14,9 +25,10 @@ const Content = () => {
 };
 
 const EncyclopediaItemModal = () => {
+  const path = "/encyclopedia/:identifier";
   return (
-    <Modal path="/encyclopedia/:identifier">
-      <Content />
+    <Modal path={path}>
+      <Content path={path} />
     </Modal>
   );
 };

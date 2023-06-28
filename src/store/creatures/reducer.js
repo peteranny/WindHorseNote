@@ -1,7 +1,7 @@
 import { fromPairs } from "ramda";
 import { PLACE_CREATURES } from "../slots/actions";
 import creatures from "../../models/creatures";
-import { UNREAD_CREATURES } from "./actions";
+import { UNREAD_CREATURES, READ_CREATURE } from "./actions";
 
 const positions = ["upperLeft", "upperRight", "lowerLeft", "lowerRight"];
 
@@ -27,6 +27,12 @@ const creatureReducer = (state = {}, action) => {
       }
       return state;
 
+    case READ_CREATURE:
+      if (action.identifier === action._identifier) {
+        return { ...state, unread: false };
+      }
+      return state;
+
     default:
       return state;
   }
@@ -35,7 +41,8 @@ const creatureReducer = (state = {}, action) => {
 const creaturesReducer = (state = {}, action) => {
   switch (action.type) {
     case PLACE_CREATURES:
-    case UNREAD_CREATURES: {
+    case UNREAD_CREATURES:
+    case READ_CREATURE: {
       const pairs = creatures.map(({ identifier: _identifier }) => [
         _identifier,
         creatureReducer(state[_identifier], { ...action, _identifier }),
