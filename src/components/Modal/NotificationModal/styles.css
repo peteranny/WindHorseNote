@@ -1,0 +1,10 @@
+
+.more {
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 30px;
+  margin: 10px;
+  text-align: center;
+  padding: 1em;
+}

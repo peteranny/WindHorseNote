@@ -1,0 +1,34 @@
+.container {
+  height: 100px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 30px;
+  border: 3px solid black;
+
+  img {
+    vertical-align: middle;
+    margin-right: 0.5em;
+
+    &.creature {
+      height: 100%;
+    }
+
+    &.item {
+      height: 50%;
+    }
+  }
+
+  &::after {
+    content: attr(data-bells);
+    display: inline-block;
+    background-color: white;
+    background-image: url(../../../BellCount/bell.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0 0.5em 0 1.5em;
+    border: 3px solid goldenrod;
+    border-radius: 1em;
+    font-size: 12pt;
+    color: black;
+  }
+}

@@ -1,0 +1,8 @@
+.store {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
