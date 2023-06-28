@@ -12,6 +12,7 @@ import BackpackButton from "./CornerButton/BackpackButton";
 import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
 import styles from "./styles.css";
 import usePlaceCreatures from "../hooks/usePlaceCreatures";
+import EncyclopediaItemModal from "./Modal/EncyclopediaItemModal";
 
 const LawnScreen = () => {
   usePlaceCreatures();
@@ -28,6 +29,8 @@ const LawnScreen = () => {
       <BackpackItemSlotModal />
 
       <EncyclopediaModal />
+      <EncyclopediaItemModal />
+
       <NotificationModal />
 
       <div className={cn(styles.option, styles.upperRight)}>
