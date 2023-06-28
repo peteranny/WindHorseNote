@@ -9,6 +9,7 @@ import {
 } from "../../store/slots/selectors";
 import items from "../../models/items";
 import creatures from "../../models/creatures";
+import resolveSuffixIcon from "../../utils/resolveSuffixIcon";
 
 const animationNames = [
   [styles.swing, 20],
@@ -42,17 +43,19 @@ const Slot = ({ className, at, ...props }) => {
 
   if (!item) return null;
 
+  const resolveIcon = resolveSuffixIcon(creature && creature.family);
+  const overlay = resolveIcon(item.overlay);
+
   return (
     <div className={cn(className, styles.slot)} {...props}>
       {item && (
         <img className={cn(styles.item, styles[item.type])} src={item.icon} />
       )}
       {creature && (
-        <img
-          className={styles.creature}
-          style={{ animationName }}
-          src={creature.icon}
-        />
+        <div className={styles.creature} style={{ animationName }}>
+          {overlay && <img className={styles.overlay} src={overlay} />}
+          <img src={creature.icon} />
+        </div>
       )}
     </div>
   );

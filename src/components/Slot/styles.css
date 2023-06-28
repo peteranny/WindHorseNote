@@ -17,6 +17,15 @@
     width: 100%;
     z-index: 0;
     animation: 0.5s ease-in-out infinite alternate;
+
+    img {
+      width: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      z-index: 1;
+    }
   }
 }
 

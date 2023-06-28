@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { Fragment, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import styles from "./styles.css";
@@ -9,6 +9,7 @@ import { boughtItem } from "../../../../store/backpack/selectors";
 import items from "../../../../models/items";
 import { buyItem } from "../../../../store/backpack/actions";
 import { bellCount } from "../../../../store/bellCount/selectors";
+import resolveSuffixIcon from "../../../../utils/resolveSuffixIcon";
 
 const useAt = (identifier) => {
   const upperLeft = useSelector(itemIdentifierAt("upperLeft"));
@@ -62,12 +63,24 @@ const Item = ({ identifier, icon }) => {
       data-bells={item.bells}
     >
       <div className={styles.icon}>
-        {item.overlayWind && (
-          <img className={styles.overlayWind} src={item.overlayWind} />
-        )}
-        {item.overlayHorse && (
-          <img className={styles.overlayHorse} src={item.overlayHorse} />
-        )}
+        {item.overlay &&
+          (typeof item.overlay === "function" ? (
+            <Fragment>
+              <img
+                className={styles.overlay}
+                src={resolveSuffixIcon("wind")(item.overlay)}
+              />
+              <img
+                className={styles.overlay}
+                src={resolveSuffixIcon("horse")(item.overlay)}
+              />
+            </Fragment>
+          ) : (
+            <img
+              className={styles.overlay}
+              src={resolveSuffixIcon("wind")(item.overlay)}
+            />
+          ))}
         <img src={icon} />
       </div>
     </button>

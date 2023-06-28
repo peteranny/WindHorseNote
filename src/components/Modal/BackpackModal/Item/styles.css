@@ -6,10 +6,27 @@
   margin: 20px;
   padding: 5px;
 
-  img {
+  .icon {
     width: 100px;
+    height: 100px;
+    position: relative;
     display: block;
-    transition: 0.3s filter;
+    margin: auto;
+    text-align: left;
+
+    img {
+      position: absolute;
+      width: 100px;
+      transition: 0.3s filter;
+    }
+
+    .overlay {
+      z-index: 1;
+
+      &:nth-child(2) {
+        transform: translateX(-30px);
+      }
+    }
   }
 
   &::before {
