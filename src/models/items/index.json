@@ -20,6 +20,16 @@
     "type": "side"
   },
   {
+    "identifier": "2020-05",
+    "name": "小馬媽香蕉",
+    "description": "小馬媽認證的小馬媽香蕉，小馬媽喜歡打成小馬媽香蕉果汁，封面只是展示用的，如果要攪拌，會把貼紙拿下來。",
+    "descriptionImage": "./2020-05.jpeg",
+    "icon": "./2020-05.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
