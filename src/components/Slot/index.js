@@ -11,14 +11,14 @@ import items from "../../models/items";
 import creatures from "../../models/creatures";
 
 const animationNames = [
-  [styles.swing, 40],
-  [styles.jump, 10],
-  [styles.swing, 40],
-  [styles.quiver, 5],
-  [styles.jump, 10],
+  [styles.swing, 20],
+  [styles.jump, 5],
+  [styles.swing, 20],
+  [styles.quiver, 1],
+  [styles.jump, 5],
   [styles.spin, 1],
-  [styles.swing, 40],
-  [styles.jump, 10],
+  [styles.swing, 20],
+  [styles.jump, 5],
   [styles.rainbow, 1],
 ];
 
