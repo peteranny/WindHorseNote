@@ -1,5 +1,27 @@
 [
   {
+    "identifier": "2022-12-horse",
+    "name": "Akoke小馬",
+    "description": "小馬穿著小小馬的內褲就變成格鬥系Akoke小馬，就不知不覺力氣變大，小馬可以舉起兩個小風了，好厲害喔！",
+    "descriptionImage": "./2022-12.jpeg",
+    "icon": "./2022-12-horse.png",
+    "family": "horse",
+    "featureVector": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0.5, 0, 5
+    ]
+  },
+  {
+    "identifier": "2022-12-wind",
+    "name": "Akoke小風",
+    "description": "小風穿著小小風的內褲就變成格鬥系Akoke小風，就不知不覺力氣變大，小風可以舉起兩個小馬了，好厲害喔！",
+    "descriptionImage": "./2022-12.jpeg",
+    "icon": "./2022-12-wind.png",
+    "family": "wind",
+    "featureVector": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0.5, 0, 0, 5
+    ]
+  },
+  {
     "identifier": "2023-01-horse",
     "name": "龍龍小馬",
     "description": "因為就要過小風小馬年了，小馬在小風小馬紅包裡，不知道臉上為什麼會黏著圓圓鬍子，然後就不知不覺變成龍龍小馬，叫聲變成啊龍龍龍。",
