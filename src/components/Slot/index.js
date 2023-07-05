@@ -50,7 +50,11 @@ const Slot = ({ className, at, ...props }) => {
   return (
     <div className={cn(className, styles.slot)} {...props}>
       {item && (
-        <img className={cn(styles.item, styles[item.type])} src={icon} />
+        <img
+          className={cn(styles.item, styles[item.type])}
+          style={creature && { animationName }}
+          src={icon}
+        />
       )}
       {creature && (
         <div className={styles.creature} style={{ animationName }}>

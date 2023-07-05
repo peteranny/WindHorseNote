@@ -49,5 +49,15 @@
     "bells": 100,
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     "type": "foreground"
+  },
+  {
+    "identifier": "2022-10",
+    "name": "羽毛頭箍",
+    "description": "小風小馬看到有羽毛的頭箍，就很開心的戴起來，想說可不可以飛，沒想到就飛了起來，小風小馬就❤️❤️❤️，變成飛行小風小馬。",
+    "descriptionImage": "./2022-10.jpeg",
+    "icon": "./2022-10.png",
+    "bells": 70,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "hat"
   }
 ]
