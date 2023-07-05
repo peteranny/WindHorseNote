@@ -1,5 +1,14 @@
 [
   {
+    "identifier": "2016-08",
+    "name": "牽牛小馬",
+    "description": "牽小馬牛的項鍊的花。",
+    "descriptionImage": "./2016-08.jpeg",
+    "icon": "./2016-08.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0.9]
+  },
+  {
     "identifier": "2022-12-horse",
     "name": "Akoke小馬",
     "description": "小馬穿著小小馬的內褲就變成格鬥系Akoke小馬，就不知不覺力氣變大，小馬可以舉起兩個小風了，好厲害喔！",
