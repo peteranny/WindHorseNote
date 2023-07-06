@@ -9,6 +9,15 @@
     "featureVector": [0, 0, 0, 5, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0.9]
   },
   {
+    "identifier": "2017-03",
+    "name": "木木小風",
+    "description": "被小馬看到真正的木木小風時，小馬就要對小風負責。",
+    "descriptionImage": "./2017-03.jpeg",
+    "icon": "./2017-03.png",
+    "family": "wind",
+    "featureVector": [0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.9]
+  },
+  {
     "identifier": "2022-12-horse",
     "name": "Akoke小馬",
     "description": "小馬穿著小小馬的內褲就變成格鬥系Akoke小馬，就不知不覺力氣變大，小馬可以舉起兩個小風了，好厲害喔！",
