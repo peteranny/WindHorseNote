@@ -10,6 +10,16 @@
     "type": "side"
   },
   {
+    "identifier": "2016-10",
+    "name": "小竹筍",
+    "description": "簡單版的竹筍，本來想有一層一層的感覺，但如果那樣做，感覺小竹筍就不會那麼可愛了。",
+    "descriptionImage": "./2016-10.jpeg",
+    "icon": "./2016-10.png",
+    "bells": 5,
+    "featureVector": [0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2020-04",
     "name": "小風媽青椒",
     "description": "小風媽親自栽種所認證的小風媽青椒，小風小馬吃了身體會非常健康，小風兒和小馬兒會變得一直很有精神。",
