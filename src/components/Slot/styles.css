@@ -11,6 +11,10 @@
       z-index: 1;
       top: 40px; /* Below the creature */
     }
+
+    &.foreground {
+      z-index: 1;
+    }
   }
 
   .creature {

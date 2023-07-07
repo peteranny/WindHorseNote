@@ -45,11 +45,12 @@ const Slot = ({ className, at, ...props }) => {
 
   const resolveIcon = resolveSuffixIcon(creature && creature.family);
   const overlay = resolveIcon(item.overlay);
+  const icon = resolveIcon(item.icon);
 
   return (
     <div className={cn(className, styles.slot)} {...props}>
       {item && (
-        <img className={cn(styles.item, styles[item.type])} src={item.icon} />
+        <img className={cn(styles.item, styles[item.type])} src={icon} />
       )}
       {creature && (
         <div className={styles.creature} style={{ animationName }}>

@@ -81,7 +81,20 @@ const Item = ({ identifier, icon }) => {
               src={resolveSuffixIcon("wind")(item.overlay)}
             />
           ))}
-        <img src={icon} />
+        {typeof icon === "function" ? (
+          <Fragment>
+            <img
+              className={styles.icon}
+              src={resolveSuffixIcon("wind")(icon)}
+            />
+            <img
+              className={styles.icon}
+              src={resolveSuffixIcon("horse")(icon)}
+            />
+          </Fragment>
+        ) : (
+          <img src={icon} />
+        )}
       </div>
     </button>
   );

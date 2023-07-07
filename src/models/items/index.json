@@ -29,5 +29,15 @@
     "bells": 70,
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     "type": "side"
+  },
+  {
+    "identifier": "2022-01",
+    "name": "小風小馬太空船",
+    "description": "過年時，小風小馬太空船要靠沖天炮，把小風小馬太空船送到小風小馬外太空。",
+    "descriptionImage": "./2022-01.jpeg",
+    "icon": "./2022-01-[suffix].png",
+    "bells": 100,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "foreground"
   }
 ]
