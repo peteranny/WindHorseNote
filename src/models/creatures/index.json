@@ -1,5 +1,14 @@
 [
   {
+    "identifier": "2016-07",
+    "name": "風車菊企鵝小風",
+    "description": "小風看到小風企鵝？才有的靈感而誕生的企鵝小風。",
+    "descriptionImage": "./2016-07.jpeg",
+    "icon": "./2016-07.png",
+    "family": "wind",
+    "featureVector": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.9]
+  },
+  {
     "identifier": "2016-08",
     "name": "牽牛小馬",
     "description": "牽小馬牛的項鍊的花。",
