@@ -61,6 +61,16 @@
     "type": "foreground"
   },
   {
+    "identifier": "2022-04",
+    "name": "小風小馬寶貝球",
+    "description": "可以抓寶可夢小風小馬。",
+    "descriptionImage": "./2022-04.jpeg",
+    "icon": "./2022-04.png",
+    "bells": 40,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2022-09-horse",
     "name": "像小馬的石頭",
     "description": "小風小馬滾來滾去的時候，有石頭滾在小風頭上，當小風問號問號的一直滾，就突然驚嘆號，小風發現他頭上有像小馬的石頭，然後就❤️❤️❤️。（功用：擁有吸引所有小風的能力）",
