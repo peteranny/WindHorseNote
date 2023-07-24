@@ -6,6 +6,7 @@ import Modal from "..";
 import styles from "./styles.css";
 import { placeItem } from "../../../store/slots/actions";
 import usePush from "../../../hooks/usePush";
+import items from "../../../models/items";
 import { atForItem } from "../../../store/slots/selectors";
 
 const ItemSlotSelection = () => {
@@ -39,6 +40,28 @@ const ItemSlotSelection = () => {
   );
 };
 
+const ItemInfoBlock = () => {
+  const { identifier } = useParams();
+  const { name, description, descriptionImage } = items.find(
+    (item) => item.identifier === identifier
+  );
+  if (!description) {
+    return null;
+  }
+  const [year, month] = identifier.match(/\d+/g) || [];
+  return (
+    <div
+      className={styles.info}
+      data-name={name}
+      data-description={
+        (year && month ? `${year}年${month}月誕生。` : "") + description
+      }
+    >
+      {descriptionImage && <img src={descriptionImage} />}
+    </div>
+  );
+};
+
 const BackpackItemSlotModal = ({ className }) => {
   return (
     <Modal
@@ -46,6 +69,7 @@ const BackpackItemSlotModal = ({ className }) => {
       path="/backpack/:identifier"
     >
       <ItemSlotSelection />
+      <ItemInfoBlock />
     </Modal>
   );
 };
