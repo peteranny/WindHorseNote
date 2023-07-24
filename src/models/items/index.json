@@ -8,5 +8,15 @@
     "bells": 0,
     "featureVector": [0, 1],
     "type": "side"
+  },
+  {
+    "identifier": "2020-04",
+    "name": "小風媽青椒",
+    "description": "小風媽親自栽種所認證的小風媽青椒，小風小馬吃了身體會非常健康，小風兒和小馬兒會變得一直很有精神。",
+    "descriptionImage": "./2020-04.jpeg",
+    "icon": "./2020-04.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 1],
+    "type": "side"
   }
 ]
