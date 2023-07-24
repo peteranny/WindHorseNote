@@ -4,6 +4,7 @@
     "name": "37歲生日蛋糕",
     "icon": "./cake.png",
     "bells": 0,
+    "featureVector": [0, 1],
     "type": "side"
   }
 ]

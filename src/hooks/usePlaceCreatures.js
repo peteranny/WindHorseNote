@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { prop, pipe, defaultTo, isEmpty, not, toPairs, values } from "ramda";
+import { prop, pipe, defaultTo, values, isEmpty, not, toPairs } from "ramda";
 import creatures from "../models/creatures";
+import items from "../models/items";
 import { slots as slotsSelector } from "../store/slots/selectors";
 import { placeCreatures } from "../store/slots/actions";
 import { unreadBells } from "../store/notifications/actions";
 import { unseenCreatureIdentifiers as unseenCreatureIdentifiersSelector } from "../store/creatures/selectors";
 import { unreadCreatures } from "../store/creatures/actions";
+import dotProduct from "../utils/dotProduct";
 
 const propItemIdentifier = pipe(prop("itemIdentifier"), defaultTo(null));
 const propCreatureIdentifier = pipe(
@@ -20,15 +22,39 @@ const nextUpdateReached = (slot) => {
   return nextUpdate && Date.now() >= nextUpdate;
 };
 
-const findNextCreature = () => {
-  return creatures[0] || null;
+const findNextCreature = (item, slots, slotCreatures) => {
+  const placedCreatureIdentifiers =
+    values(slots).map(propCreatureIdentifier) + values(slotCreatures);
+
+  const unplacedCreatures = creatures.filter(
+    ({ identifier }) => placedCreatureIdentifiers.includes(identifier) === false
+  );
+
+  const scoredCreatures = unplacedCreatures.map((creature) => ({
+    ...creature,
+    // Calculate the score
+    score: dotProduct(item.featureVector, creature.featureVector),
+  }));
+
+  const randomizedCreatures = scoredCreatures.sort(() => 0.5 - Math.random());
+
+  const creature = randomizedCreatures.find(({ score }) => {
+    // Throw a dice
+    const dice = Math.random();
+    return dice < score;
+  });
+
+  return creature;
 };
 
 const createSlotCreatures = (slots) => {
   const slotCreatures = {};
 
   // Place creatures if needed
-  const positions = ["upperLeft", "upperRight", "lowerLeft", "lowerRight"];
+  const positions = ["upperLeft", "upperRight", "lowerLeft", "lowerRight"].sort(
+    () => 0.5 - Math.random()
+  );
+
   for (const at of positions) {
     const slot = slots[at] || {};
 
@@ -48,7 +74,14 @@ const createSlotCreatures = (slots) => {
       continue;
     }
 
-    const creature = findNextCreature();
+    // Find target creature to place
+    const item = items.find(
+      (item) => item.identifier === propItemIdentifier(slot)
+    );
+
+    if (!item) continue;
+
+    const creature = findNextCreature(item, slots, slotCreatures);
     if (creature) {
       // Place it
       slotCreatures[at] = creature.identifier;

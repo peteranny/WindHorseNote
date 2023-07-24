@@ -2,11 +2,15 @@
   {
     "identifier": "2023-06-horse",
     "name": "雙子座小馬",
-    "icon": "./2023-06-horse.png"
+    "icon": "./2023-06-horse.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 5]
   },
   {
     "identifier": "2023-06-wind",
     "name": "雙子座小風",
-    "icon": "./2023-06-wind.png"
+    "icon": "./2023-06-wind.png",
+    "family": "wind",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 5]
   }
 ]
