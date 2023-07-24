@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styles from "./styles.css";
-import { seenCountOf } from "../../../../store/creatures/selectors";
+import { seenCountOf, unreadOf } from "../../../../store/creatures/selectors";
 
 const Item = ({ identifier, name, icon }) => {
   const seenCount = useSelector(seenCountOf(identifier));
+  const unread = useSelector(unreadOf(identifier));
 
   return (
     <button
@@ -13,6 +14,7 @@ const Item = ({ identifier, name, icon }) => {
       data-seen-count={seenCount}
       disabled={seenCount === 0}
     >
+      {unread && <label className={styles.new}>NEW</label>}
       <img src={icon} />
     </button>
   );

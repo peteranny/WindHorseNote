@@ -1,4 +1,5 @@
 .item {
+  position: relative;
   width: 150px;
   background-color: white;
   border: 0;
@@ -36,4 +37,22 @@
       display: none;
     }
   }
+
+  .new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 4px;
+    color: yellow;
+    font-weight: bold;
+    background-color: goldenrod;
+    transform: rotate(-10deg) translateY(50%);
+    animation: impulse 0.3s ease-in infinite alternate;
+  }
+}
+
+@keyframes impulse {
+  0% { scale: 1; }
+  0% { scale: 0.9; }
 }

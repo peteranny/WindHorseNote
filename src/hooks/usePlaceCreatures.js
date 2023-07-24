@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { prop, pipe, defaultTo, isEmpty, not, toPairs } from "ramda";
+import { prop, pipe, defaultTo, isEmpty, not, toPairs, values } from "ramda";
 import creatures from "../models/creatures";
 import { slots as slotsSelector } from "../store/slots/selectors";
 import { placeCreatures } from "../store/slots/actions";
 import { unreadBells } from "../store/notifications/actions";
+import { unseenCreatureIdentifiers as unseenCreatureIdentifiersSelector } from "../store/creatures/selectors";
+import { unreadCreatures } from "../store/creatures/actions";
 
 const propItemIdentifier = pipe(prop("itemIdentifier"), defaultTo(null));
 const propCreatureIdentifier = pipe(
@@ -77,6 +79,10 @@ const generateRandomRewards = (ref) => {
 };
 
 const usePlaceCreatures = () => {
+  const unseenCreatureIdentifiers = useSelector(
+    unseenCreatureIdentifiersSelector
+  );
+
   // Copy the slots
   const slots = { ...useSelector(slotsSelector) };
   const dispatch = useDispatch();
@@ -104,6 +110,12 @@ const usePlaceCreatures = () => {
         })
       );
     }
+
+    // Post unread state for placed creatures that was unseen
+    const unreadIdentifiers = values(slotCreatures).filter((identifier) =>
+      unseenCreatureIdentifiers.includes(identifier)
+    );
+    dispatch(unreadCreatures(unreadIdentifiers));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
