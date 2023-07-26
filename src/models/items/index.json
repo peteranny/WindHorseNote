@@ -10,6 +10,16 @@
     "type": "side"
   },
   {
+    "identifier": "2016-09",
+    "name": "鳥巢",
+    "description": "月見花的鳥巢。",
+    "descriptionImage": "./2016-09.jpeg",
+    "icon": "./2016-09.png",
+    "bells": 5,
+    "featureVector": [0, 0, 1],
+    "type": "pillow"
+  },
+  {
     "identifier": "2016-10",
     "name": "小竹筍",
     "description": "簡單版的竹筍，本來想有一層一層的感覺，但如果那樣做，感覺小竹筍就不會那麼可愛了。",
