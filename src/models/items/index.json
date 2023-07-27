@@ -103,6 +103,16 @@
     "type": "side"
   },
   {
+    "identifier": "2021-01",
+    "name": "小風媽鳳梨",
+    "description": "因為小風媽怕冷，所以就躲在鳳梨裡面取暖，然後就變成鳳梨小風媽。",
+    "descriptionImage": "./2021-01.jpeg",
+    "icon": "./2021-01.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
