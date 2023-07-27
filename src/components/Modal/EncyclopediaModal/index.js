@@ -7,12 +7,13 @@ import creatures from "../../../models/creatures";
 const Content = () => {
   return (
     <Shelf>
-      {creatures.map(({ identifier, name, icon }) => (
+      {creatures.map(({ identifier, name, icon, featureVector }) => (
         <Item
           key={identifier}
           identifier={identifier}
           name={name}
           icon={icon}
+          featureVector={featureVector}
         />
       ))}
     </Shelf>

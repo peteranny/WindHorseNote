@@ -3,10 +3,17 @@ import { useSelector } from "react-redux";
 import styles from "./styles.css";
 import { seenCountOf } from "../../../../store/creatures/selectors";
 import creatures from "../../../../models/creatures";
+import Favorites from "../../EncyclopediaModal/Item/Favorites";
 
 const Item = ({ identifier: creatureIdentifier }) => {
-  const { identifier, name, description, descriptionImage, icon } =
-    creatures.find(({ identifier }) => identifier === creatureIdentifier);
+  const {
+    identifier,
+    name,
+    description,
+    descriptionImage,
+    icon,
+    featureVector,
+  } = creatures.find(({ identifier }) => identifier === creatureIdentifier);
 
   const seenCount = useSelector(seenCountOf(identifier));
   const [year, month] = identifier.match(/\d+/g) || [];
@@ -28,6 +35,7 @@ const Item = ({ identifier: creatureIdentifier }) => {
             )}
             {description}
           </div>
+          <Favorites featureVector={featureVector} />
         </div>
       </div>
       {descriptionImage && (

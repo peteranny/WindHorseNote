@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import styles from "./styles.css";
 import { seenCountOf, unreadOf } from "../../../../store/creatures/selectors";
 import usePush from "../../../../hooks/usePush";
+import Favorites from "./Favorites";
 
-const Item = ({ identifier, name, icon }) => {
+const Item = ({ identifier, name, icon, featureVector }) => {
   const seenCount = useSelector(seenCountOf(identifier));
   const unread = useSelector(unreadOf(identifier));
   const push = usePush();
@@ -20,6 +21,7 @@ const Item = ({ identifier, name, icon }) => {
     >
       {unread && <label className={styles.new}>NEW</label>}
       <img src={icon} />
+      <Favorites featureVector={featureVector} />
     </button>
   );
 };
