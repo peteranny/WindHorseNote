@@ -182,6 +182,28 @@
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0.5]
   },
   {
+    "identifier": "2022-06-horse",
+    "name": "水水小馬",
+    "description": "小風跟小馬躺在地上一起看小風小馬星星，結果要翻身起來翻不起來，小馬就變成流汗小馬了。",
+    "descriptionImage": "./2022-06.jpeg",
+    "icon": "./2022-06-horse.png",
+    "family": "horse",
+    "featureVector": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0.5, 0, 5
+    ]
+  },
+  {
+    "identifier": "2022-06-wind",
+    "name": "水水小風",
+    "description": "小風跟小馬躺在地上一起看小風小馬星星，結果要翻身起來翻不起來，小風就變成流汗小風了。",
+    "descriptionImage": "./2022-06.jpeg",
+    "icon": "./2022-06-wind.png",
+    "family": "wind",
+    "featureVector": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0.5, 0, 0, 5
+    ]
+  },
+  {
     "identifier": "2022-12-horse",
     "name": "Akoke小馬",
     "description": "小馬穿著小小馬的內褲就變成格鬥系Akoke小馬，就不知不覺力氣變大，小馬可以舉起兩個小風了，好厲害喔！",
