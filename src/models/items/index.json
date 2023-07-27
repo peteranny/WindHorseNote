@@ -93,6 +93,16 @@
     "type": "side"
   },
   {
+    "identifier": "2020-12",
+    "name": "小馬媽火龍果",
+    "description": "小馬媽如果跟小馬鬥脾氣生氣的時候，小馬媽的尾巴變成小馬媽火龍果，然後吃掉就不生氣了。",
+    "descriptionImage": "./2020-12.jpeg",
+    "icon": "./2020-12.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
