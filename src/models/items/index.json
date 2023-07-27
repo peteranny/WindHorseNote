@@ -60,6 +60,18 @@
     "type": "side"
   },
   {
+    "identifier": "2020-07",
+    "name": "小風媽辣椒",
+    "description": "這是小風媽辣椒的由來，先讓小風媽種辣椒，然後長出辣椒小風，辣椒小風頭上的辣椒成熟了，就會掉在地上，小風媽就有小風媽辣椒可以用了。",
+    "descriptionImage": "./2020-07.jpeg",
+    "icon": "./2020-07.png",
+    "activeIcon": "./2020-07-active.png",
+    "overlay": "./2020-07-overlay.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
