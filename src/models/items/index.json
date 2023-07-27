@@ -50,6 +50,16 @@
     "type": "side"
   },
   {
+    "identifier": "2020-06",
+    "name": "小風(綠)芒果",
+    "description": "這是由芒果不小心長成的芒果小風，因為很多汁，所以小馬特別喜歡舔。",
+    "descriptionImage": "./2020-06.jpeg",
+    "icon": "./2020-06.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
