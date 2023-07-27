@@ -72,6 +72,17 @@
     "type": "side"
   },
   {
+    "identifier": "2020-10",
+    "name": "小馬媽柚子",
+    "description": "打開來就看到吃飽的小馬媽，因為太喜歡吃了，所以躲在裡面吃。",
+    "descriptionImage": "./2020-10.jpeg",
+    "icon": "./2020-10.png",
+    "activeIcon": "./2020-10-active.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",

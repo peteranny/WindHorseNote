@@ -46,6 +46,7 @@ const Slot = ({ className, at, ...props }) => {
   const resolveIcon = resolveSuffixIcon(creature && creature.family);
   const overlay = resolveIcon(item.overlay);
   const icon = resolveIcon(item.icon);
+  const activeIcon = resolveIcon(item.activeIcon);
 
   return (
     <div className={cn(className, styles.slot)} {...props}>
@@ -53,7 +54,7 @@ const Slot = ({ className, at, ...props }) => {
         <img
           className={cn(styles.item, styles[item.type])}
           style={creature && { animationName }}
-          src={icon}
+          src={(creature && activeIcon) || icon}
         />
       )}
       {creature && (
