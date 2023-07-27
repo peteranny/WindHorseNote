@@ -222,6 +222,24 @@
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 3, 0, 0.5]
   },
   {
+    "identifier": "2022-08-horse",
+    "name": "超能力小馬",
+    "description": "小風有一天在路上撿到鐵條，不知道為什麼就自動彎曲，結果拿給小馬也是一樣，他們就不知不覺有了超能力。",
+    "descriptionImage": "./2022-08.jpeg",
+    "icon": "./2022-08-horse.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 0, 0.5]
+  },
+  {
+    "identifier": "2022-08-wind",
+    "name": "超能力小風",
+    "description": "小風有一天在路上撿到鐵條，不知道為什麼就自動彎曲，結果拿給小馬也是一樣，他們就不知不覺有了超能力。",
+    "descriptionImage": "./2022-08.jpeg",
+    "icon": "./2022-08-wind.png",
+    "family": "wind",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 0.5]
+  },
+  {
     "identifier": "2022-12-horse",
     "name": "Akoke小馬",
     "description": "小馬穿著小小馬的內褲就變成格鬥系Akoke小馬，就不知不覺力氣變大，小馬可以舉起兩個小風了，好厲害喔！",
