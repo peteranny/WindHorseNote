@@ -83,6 +83,16 @@
     "type": "side"
   },
   {
+    "identifier": "2020-11",
+    "name": "小風媽榴槤",
+    "description": "因為小風媽太喜歡吃榴槤了，所以就躲在裡面吃，不小心就被發現了，手上還有殘渣。",
+    "descriptionImage": "./2020-11.jpeg",
+    "icon": "./2020-11.png",
+    "bells": 20,
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "type": "side"
+  },
+  {
     "identifier": "2021-12",
     "name": "小白",
     "description": "小風小馬變成小風小馬聖誕老人，都有自己的聖誕帽，會騎著小白給其他的小風小馬送禮物。",
