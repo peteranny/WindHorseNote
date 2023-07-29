@@ -331,6 +331,24 @@
     "descriptionImage": "./2023-06.jpeg",
     "icon": "./2023-06-wind.png",
     "family": "wind",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, 0, 5]
+  },
+  {
+    "identifier": "2023-07-horse",
+    "name": "巨蟹座小馬",
+    "description": "小風小馬滾滾滾， 滾到小風小馬濕地，小馬看見問號螃蟹小馬，就不小心學習他的表情。",
+    "descriptionImage": "./2023-07.jpeg",
+    "icon": "./2023-07-horse.png",
+    "family": "horse",
+    "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 5]
+  },
+  {
+    "identifier": "2023-07-wind",
+    "name": "巨蟹座小風",
+    "description": "小風小馬滾滾滾， 滾到小風小馬濕地，小風看見問號螃蟹小風，就不小心學習他的表情。",
+    "descriptionImage": "./2023-07.jpeg",
+    "icon": "./2023-07-wind.png",
+    "family": "wind",
     "featureVector": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 5]
   }
 ]
