@@ -11,3 +11,6 @@ export const unseenCreatureIdentifiers = (state) =>
 
 export const unreadOf = (identifier) =>
   pipe(path(["creatures", identifier, "unread"]), defaultTo(false));
+
+export const unreadEncyclopedia = (state) =>
+  creatures.some(({ identifier }) => unreadOf(identifier)(state));

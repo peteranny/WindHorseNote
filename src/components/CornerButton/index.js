@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./styles.css";
 import usePush from "../../hooks/usePush";
 
-const CornerButton = ({ className, path, onClick, ...props }) => {
+const CornerButton = ({ className, path, onClick, unread, ...props }) => {
   const push = usePush();
   const handleClick = useCallback(() => {
     push(path);
@@ -12,7 +12,7 @@ const CornerButton = ({ className, path, onClick, ...props }) => {
 
   return (
     <div
-      className={cn(styles.button, className)}
+      className={cn(styles.button, { [styles.unread]: unread }, className)}
       onClick={handleClick}
       {...props}
     />

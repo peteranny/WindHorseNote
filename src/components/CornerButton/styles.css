@@ -8,4 +8,38 @@
   img {
     width: 100%;
   }
+
+  position: relative;
+
+  &.unread::after {
+    /* Positioned at corner */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    /* Red dot */
+    content: '';
+    display: block;
+    background-color: red;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    animation: radar 1s infinite;
+  }
+}
+
+@keyframes radar {
+  0% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
