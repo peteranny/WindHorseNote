@@ -31,8 +31,8 @@ const Item = ({ identifier, icon }) => {
   const dispatch = useDispatch();
   const push = usePush();
   const at = useAt(identifier);
-  const item = items.find((item) => item.identifier === identifier);
   const placed = !!at;
+  const item = items.find((item) => item.identifier === identifier);
   const onClick = useCallback(() => {
     if (at && confirm(`你要收回${item.name}嗎？`)) {
       dispatch(placeItem({ identifier: null, at }));

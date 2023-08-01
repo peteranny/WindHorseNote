@@ -24,3 +24,5 @@ export const atForItem = (identifier) => (state) => {
   }
   return null;
 };
+
+export const nextUpdateAt = (at) => path(["slots", at, "nextUpdate"]);
