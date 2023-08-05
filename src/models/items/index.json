@@ -1,5 +1,16 @@
 [
   {
+    "identifier": "2017-09",
+    "name": "小馬帽子",
+    "description": "小風做的小馬帽子",
+    "descriptionImage": "./2017-09.png",
+    "icon": "./2017-09.png",
+    "bells": 100,
+    "featureVector": [1],
+    "type": "hat",
+    "hidden": true
+  },
+  {
     "identifier": "cake",
     "name": "37歲生日蛋糕",
     "description": "小風37歲的圓圓生日蛋糕，小風小馬看到圓圓的就以為也是小風小馬，就在蛋糕旁邊搖來搖去。希望小風收到這個遊戲禮物會喜歡，祝我最喜歡的小風生日快樂，求上帝祝福小風新的一歲，小馬也會一直讓小風開心下去，好喜歡親親哦>8<",

@@ -56,6 +56,7 @@ const Item = ({ identifier, icon }) => {
       className={cn(styles.item, {
         [styles.placed]: placed,
         [styles.bought]: bought,
+        [styles.neon]: item.hidden,
       })}
       disabled={!bought && !buyable}
       onClick={onClick}

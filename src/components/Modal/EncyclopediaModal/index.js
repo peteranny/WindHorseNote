@@ -3,19 +3,28 @@ import Modal from "..";
 import Shelf from "./Shelf";
 import Item from "./Item";
 import creatures from "../../../models/creatures";
+import { useSelector } from "react-redux";
+import { eligibleForFinalCreatures } from "../../../store/bellCount/selectors";
 
 const Content = () => {
+  const eligibleForHidden = useSelector(eligibleForFinalCreatures);
+  const prunedCreatures = eligibleForHidden
+    ? creatures
+    : creatures.filter(({ hidden }) => !hidden);
   return (
     <Shelf>
-      {creatures.map(({ identifier, name, icon, featureVector }) => (
-        <Item
-          key={identifier}
-          identifier={identifier}
-          name={name}
-          icon={icon}
-          featureVector={featureVector}
-        />
-      ))}
+      {prunedCreatures.map(
+        ({ identifier, name, icon, hidden, featureVector }) => (
+          <Item
+            key={identifier}
+            identifier={identifier}
+            name={name}
+            icon={icon}
+            hidden={hidden}
+            featureVector={featureVector}
+          />
+        )
+      )}
     </Shelf>
   );
 };

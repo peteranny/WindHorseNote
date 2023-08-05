@@ -1,0 +1,29 @@
+.splash {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: red;
+  animation: splashIn 5s ease-out forwards, neon 1s linear infinite;
+}
+
+@keyframes splashIn {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes neon {
+  from { filter: con(0); }
+  to { filter: hue-rotate(360deg); }
+}

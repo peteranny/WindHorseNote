@@ -5,11 +5,11 @@ import usePush from "../../hooks/usePush";
 import styles from "./styles.css";
 import useSafariHeightHack from "../../hooks/useSafariViewHeightHack";
 
-const Modal = ({ className, path, children }) => {
+const Modal = ({ className, path, closePath, children }) => {
   const push = usePush();
   const close = useCallback(() => {
-    push("..");
-  }, [push]);
+    push(closePath || "..");
+  }, [push, closePath]);
 
   const preventPropagation = useCallback((e) => {
     e.stopPropagation();

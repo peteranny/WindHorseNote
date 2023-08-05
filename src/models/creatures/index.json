@@ -1,5 +1,15 @@
 [
   {
+    "identifier": "2017-09",
+    "name": "小馬小風",
+    "description": "不管親親到了哪裡，小風都會找到小馬的，小馬也會等到小風的。",
+    "descriptionImage": "./2017-09.jpeg",
+    "icon": "./2017-09.png",
+    "family": "wind",
+    "featureVector": [1],
+    "hidden": true
+  },
+  {
     "identifier": "2016-07",
     "name": "風車菊企鵝小風",
     "description": "小風看到小風企鵝？才有的靈感而誕生的企鵝小風。",

@@ -14,3 +14,15 @@ export const unreadOf = (identifier) =>
 
 export const unreadEncyclopedia = (state) =>
   creatures.some(({ identifier }) => unreadOf(identifier)(state));
+
+export const seenAllCreatures = (state) =>
+  creatures
+    .filter(({ hidden }) => !hidden)
+    .map(path(["identifier"]))
+    .every((identifier) => seenCountOf(identifier)(state) > 0);
+
+export const seenFinalCreatures = (state) =>
+  creatures
+    .filter(({ hidden }) => hidden)
+    .map(path(["identifier"]))
+    .some((identifier) => seenCountOf(identifier)(state) > 0);

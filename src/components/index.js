@@ -7,17 +7,20 @@ import BackpackModal from "./Modal/BackpackModal";
 import EncyclopediaModal from "./Modal/EncyclopediaModal";
 import NotificationModal from "./Modal/NotificationModal";
 import BackpackItemSlotModal from "./Modal/BackpackItemSlotModal";
+import FinalModal from "./Modal/FinalModal";
 import BellCount from "./BellCount";
 import BackpackButton from "./CornerButton/BackpackButton";
 import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
 import styles from "./styles.css";
 import usePlaceCreatures from "../hooks/usePlaceCreatures";
 import useRefresher from "../hooks/useRefresher";
+import useFinalPresenter from "../hooks/useFinalPresenter";
 import EncyclopediaItemModal from "./Modal/EncyclopediaItemModal";
 
 const LawnScreen = () => {
   usePlaceCreatures();
   useRefresher();
+  useFinalPresenter();
 
   return (
     <Lawn className={styles.container}>
@@ -34,6 +37,7 @@ const LawnScreen = () => {
       <EncyclopediaItemModal />
 
       <NotificationModal />
+      <FinalModal />
 
       <div className={cn(styles.option, styles.upperRight)}>
         <BackpackButton />

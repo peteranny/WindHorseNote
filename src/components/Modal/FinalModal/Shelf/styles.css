@@ -1,0 +1,50 @@
+.store {
+  position: relative;
+  overflow-x: hidden;
+
+  .bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: lightblue;
+    animation: shiny 10s infinite;
+  }
+}
+
+@keyframes shiny {
+  from { filter: hue-rotate(0); }
+  to { filter: hue-rotate(360deg); }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  min-height: 450px;
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.fadingIn {
+  animation: fadingIn ease-out forwards;
+}
+
+.fadingOut {
+  animation: fadingOut ease-in forwards;
+}
+
+@keyframes fadingIn {
+  from { filter: brightness(0) opacity(0.5) blur(3px); }
+  to { filter: brightness(1) opacity(1) blur(0); }
+}
+
+@keyframes fadingOut {
+  from { filter: brightness(1) opacity(1) blur(0); }
+  to { filter: brightness(0) opacity(0.5) blur(3px); }
+}

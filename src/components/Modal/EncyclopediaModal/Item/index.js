@@ -1,11 +1,12 @@
 import React, { useCallback } from "react";
+import cn from "classnames";
 import { useSelector } from "react-redux";
 import styles from "./styles.css";
 import { seenCountOf, unreadOf } from "../../../../store/creatures/selectors";
 import usePush from "../../../../hooks/usePush";
 import Favorites from "./Favorites";
 
-const Item = ({ identifier, name, icon, featureVector }) => {
+const Item = ({ identifier, name, icon, hidden, featureVector }) => {
   const seenCount = useSelector(seenCountOf(identifier));
   const unread = useSelector(unreadOf(identifier));
   const push = usePush();
@@ -13,7 +14,7 @@ const Item = ({ identifier, name, icon, featureVector }) => {
 
   return (
     <button
-      className={styles.item}
+      className={cn(styles.item, { [styles.neon]: hidden })}
       data-name={name}
       data-seen-count={seenCount}
       onClick={onClick}
