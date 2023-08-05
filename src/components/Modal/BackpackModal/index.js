@@ -9,7 +9,7 @@ const BackpackModal = () => {
     <Modal path="/backpack">
       <Shelf>
         {items.map(({ identifier, icon }) => (
-          <Item key={identifier} icon={icon} />
+          <Item key={identifier} identifier={identifier} icon={icon} />
         ))}
       </Shelf>
     </Modal>

@@ -5,6 +5,7 @@ import Protagonist from "./Protagonist";
 import Slot from "./Slot";
 import BackpackModal from "./Modal/BackpackModal";
 import EncyclopediaModal from "./Modal/EncyclopediaModal";
+import BackpackItemSlotModal from "./Modal/BackpackItemSlotModal";
 import BellCount from "./BellCount";
 import BackpackButton from "./CornerButton/BackpackButton";
 import EncyclopediaButton from "./CornerButton/EncyclopediaButton";
@@ -20,6 +21,8 @@ const LawnScreen = () => {
       <Slot className={cn(styles.slot, styles.lowerRight)} at="lowerRight" />
 
       <BackpackModal />
+      <BackpackItemSlotModal />
+
       <EncyclopediaModal />
 
       <div className={cn(styles.option, styles.upperRight)}>
