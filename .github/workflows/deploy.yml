@@ -1,0 +1,34 @@
+name: Deploy gh-pages
+run-name: ${{ github.actor }} is deploying gh-pages 🚀
+on:
+  push:
+    branches: main
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+      BRANCH: gh-pages
+      DIST: dist
+      EMAIL: peteranny2@gmail.com
+      USER: peteranny
+    steps:
+      - uses: actions/checkout@v4
+      - name: Git config
+        run: |
+          git config --global user.email "$EMAIL"
+          git config --global user.name "$USER"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm install --also=dev
+      - name: Build
+        run: npm run build
+      - name: Commit output
+        run: |
+          git add -f $DIST/*
+          git commit -m $DIST -n
+      - name: Make output branch
+        run: git subtree split --prefix $DIST -b $BRANCH
+      - name: Push output branch
+        run: git push -f origin $BRANCH
